@@ -21,5 +21,6 @@ There are example components in the Components subfolder.
 - [ ] Event handling needs to be rewritten to use single event handler per component
 - [ ] Unit tests need to be added to core code, but this will be done after the HTML parsing and event handling changes
 - [ ] Should rename @Output decorator to something else
+- [ ] Should create custom @link shortcut for @click="this.loadComponent(...)" routing syntax
 - [ ] e2e testing highlighted problem with Puppeteer's date serialisation which needs further investigation (example component PersonForm DTO fails e2e test)
 - [ ] e2e testing with Puppeteer uses long paths to target HTML elements due to the shadow DOM piercing problem. There used to be a '>>>' shadow DOM piercing CSS selector, but this has been removed from Chromium/Chrome. This will be an issue for all web component libraries that are using Puppeteer for e2e testing. Best solution for now will be to add a façade class to Vraic that simplifies the frequently used tests. [See this Puppeteer issue for more info](https://github.com/GoogleChrome/puppeteer/issues/858)
