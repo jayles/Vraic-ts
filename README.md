@@ -4,15 +4,20 @@ This is a Web Components Library written in TypeScript with one dependency (Type
 ## Features
 * No npm dependencies, can use without Webpack
 * Simple and lightweight, core code is approx 5KB (Brotli compressed)
-* includes Router class
-* Uses @Component syntax for declaring component
+* Uses {{handlerbars}} syntax to denote output fields in HTML templates
+* Uses @<event name> to attach DOM events to HTML elements, e.g. @click, @change
+* Includes Router class
+* Includes BaseInputForm<T> class which automates copying data from a DTO (of type T) into a HTML form, and also copying back to the DTO when the Submit button is clicked.
+* Uses @Component syntax for declaring component, e.g. @Component('my-header')
 * Uses @Attrib decorator for mapping custom HTML attributes to TypeScript properties
 * Uses @Output decorator for mapping HTML handlerbars {{output}} fields to TypeScript properties (this is likely to be renamed to avoid confusion with Angular @Input and @Output decorators)
+* Separation of Concerns - components are written using three separate files: .html, .ts and .css
 
 ## Issues/Limitations/To Do List
 - [ ] Needs to be packaged for Nuget
 - [ ] HTML template parsing code needs to be refactored/simplified
 - [ ] Event handling needs to be rewritten to use single event handler per component
 - [ ] Unit tests need to be added to core code, but this will be done after the HTML parsing and event handling changes
+- [ ] Should rename @Output decorator to something else
 - [ ] e2e testing highlighted problem with Puppeteer's date serialisation which needs further investigation (example component PersonForm DTO fails e2e test)
-- [ ] Should rename @Output decorator to something else.
+- [ ] e2e testing with Puppeteer result in long paths to target HTML elements due to the DOM piercing problem. There used to be a '>>>' DOM piercing CSS selector, but this has been removed from Chromium/Chrome. This issue will be present in all e2e testing using Pupeteer and web components. Best solution for now will be to add a façade class that simplifies the frequenctly used tests.
