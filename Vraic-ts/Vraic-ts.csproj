@@ -1,0 +1,183 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2574F603-4B6C-4A30-BFDD-E3BC09EEDFDF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TypeScriptHTMLApp1</RootNamespace>
+    <AssemblyName>TypeScriptHTMLApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>False</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Courgette\Puppeteer\puppeteer-web.js" />
+    <Content Include="TestRunner.html" />
+    <Content Include="tsconfig.json" />
+    <Content Include="UnsupportedBrowser.html" />
+    <Content Include="Components\Alert\Alert.css" />
+    <Content Include="Components\Alert\Alert.html" />
+    <Content Include="Components\HtmlPage\HtmlPage.css" />
+    <Content Include="Components\MyContent\MyContent.css" />
+    <Content Include="Components\MyCounter\MyCounter.css" />
+    <Content Include="Components\MyCounter\MyCounter.html" />
+    <Content Include="Components\HtmlPage\HtmlPage.html" />
+    <Content Include="Components\MyAside\MyAside.html" />
+    <Content Include="Components\MyAside\MyAside.css" />
+    <Content Include="Components\MyContent\MyContent.html" />
+    <Content Include="Components\MyFooter\MyFooter.css" />
+    <Content Include="Components\MyFooter\MyFooter.html" />
+    <Content Include="Components\MyHeader\MyHeader.css" />
+    <Content Include="Components\MyHeader\MyHeader.html" />
+    <Content Include="Components\MyTime\MyTime.css" />
+    <Content Include="Components\MyTime\MyTime.html" />
+    <Content Include="Components\PersonForm\PersonForm.css" />
+    <Content Include="Components\PersonForm\PersonForm.html" />
+    <TypeScriptCompile Include="Components\MyAside\MyAsideTests.courgette.ts" />
+    <TypeScriptCompile Include="Components\MyContent\MyContent.courgette.ts" />
+    <TypeScriptCompile Include="Components\MyCounter\MyCounterTests.courgette.ts" />
+    <TypeScriptCompile Include="Components\MyFooter\MyFooterTests.courgette.ts" />
+    <TypeScriptCompile Include="Components\MyHeader\MyHeaderTests.courgette.ts" />
+    <TypeScriptCompile Include="Components\PersonForm\PersonFormTests.courgette.ts" />
+    <TypeScriptCompile Include="Courgette\Courgette\CourgetteDecorators.ts" />
+    <TypeScriptCompile Include="Courgette\Courgette\CourgetteMatchers.ts" />
+    <TypeScriptCompile Include="Courgette\Courgette\CourgetteTestExecutor.ts" />
+    <TypeScriptCompile Include="Courgette\Courgette\TestItem.ts" />
+    <TypeScriptCompile Include="Courgette\Courgette\TestSuite.ts" />
+    <TypeScriptCompile Include="Courgette\Gherkin\GherkinDecorators.ts" />
+    <TypeScriptCompile Include="Courgette\Gherkin\GherkinMatchers.ts" />
+    <TypeScriptCompile Include="Courgette\Gherkin\GherkinTestExecutor.ts" />
+    <TypeScriptCompile Include="Courgette\Logger.ts" />
+    <TypeScriptCompile Include="Courgette\Puppeteer\Puppet.ts" />
+    <TypeScriptCompile Include="Courgette\Spec\SpecMatcher.ts" />
+    <TypeScriptCompile Include="Courgette\Spec\SpecTestDiscoverer.ts" />
+    <TypeScriptCompile Include="Courgette\Spec\SpecTestExecutor.ts" />
+    <TypeScriptCompile Include="Courgette\Spec\TestMethod.ts" />
+    <TypeScriptCompile Include="Courgette\Spec\TestSuite.ts" />
+    <TypeScriptCompile Include="Courgette\UnitTestsReal\MatcherTests.courgette.ts" />
+    <TypeScriptCompile Include="Courgette\UnitTestsReal\MatcherTests.spec.ts" />
+    <TypeScriptCompile Include="Courgette\VsTestRunner\VsTestResult.ts" />
+    <TypeScriptCompile Include="Courgette\VsTestRunner\VsTestRunner.ts" />
+    <Content Include="UnitTest.runsettings" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.css" />
+    <Content Include="index.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="globals.d.ts" />
+    <TypeScriptCompile Include="Components\Alert\Alert.ts" />
+    <TypeScriptCompile Include="TestRunner.ts" />
+    <TypeScriptCompile Include="Vraic\ObjectProxy.ts" />
+    <TypeScriptCompile Include="Vraic\ArrayProxy.ts" />
+    <TypeScriptCompile Include="Vraic\BaseInputForm.ts" />
+    <TypeScriptCompile Include="Vraic\Logger.ts" />
+    <TypeScriptCompile Include="Components\MyCounter\MyCounter.ts" />
+    <TypeScriptCompile Include="Components\MyTime\MyTime.ts" />
+    <TypeScriptCompile Include="Components\PersonForm\PersonForm.ts" />
+    <TypeScriptCompile Include="Components\PersonForm\Person.ts" />
+    <TypeScriptCompile Include="Vraic\Decorators.ts" />
+    <TypeScriptCompile Include="Vraic\Router.ts" />
+    <TypeScriptCompile Include="Vraic\BaseComponent.ts" />
+    <TypeScriptCompile Include="Components\HtmlPage\HtmlPage.ts" />
+    <TypeScriptCompile Include="Components\MyAside\MyAside.ts" />
+    <TypeScriptCompile Include="Components\MyContent\MyContent.ts" />
+    <TypeScriptCompile Include="Components\MyFooter\MyFooter.ts" />
+    <TypeScriptCompile Include="Components\MyHeader\MyHeader.ts" />
+    <TypeScriptCompile Include="Vraic\TemplateParser.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\TestData\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10202</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:10202/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

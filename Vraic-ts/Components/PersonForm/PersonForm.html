@@ -1,0 +1,17 @@
+﻿<template>
+	<form>
+		<label>Forename</label><input type="text" name="forename"><br>
+		<label>Surname</label><input type="text" name="surname"><br>
+		<label>DOB</label><input type="date" name="dob"><br>
+		<label>Age</label><input type="number" name="age"><br>
+
+		<label>Alive?</label>
+		<label>Yes</label><input type="radio" name="alive" value="true">
+		<label>No</label><input type="radio" name="alive" value="false"><br>
+
+		<button type="button" @click="onSubmit">Submit</button><br>
+
+		<p>Currently {{dto.forename}} {{dto.surname}} is alive? {{alive}}</p>
+		<p>The value of the property test is : '{{test}}'</p>
+	</form>
+</template>

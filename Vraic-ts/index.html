@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Vraic Web Components App</title>
+	<script>
+		// check browser supports custom elements, if not redirect to unsupported browser page
+		if (window.customElements == undefined) {
+			window.location = 'UnsupportedBrowser.html';
+		}
+	</script>
+	<link async rel="stylesheet" href="app.css" type="text/css" />
+
+	<!-- use es6 modules (must specify type="module") -->
+	<!-- see https://medium.com/@mattlag/es6-modules-getting-started-gotchas-2ad154f38e2e -->
+	<!-- load synchronously so customElements.define statements get called before custom elements are referenced -->
+	<script type="module" src="app.js"></script>
+</head>
+
+<body>
+	<noscript><div style="font-size:30px; width:100%" class="bg-yellow6 text-grey5">JavaScript is disabled. This website will not work without JavaScript</div></noscript>
+	<div class="container">
+		<my-header class="bg-grey6 text-white rounded pad2" title="My Title" my-cust-attrib="Custom Attribute"></my-header>
+		<my-aside class="bg-grey2 text-white rounded pad2"></my-aside>
+		<main><my-content class="bg-grey2 text-white rounded pad2"></my-content></main>
+		<my-footer class="bg-grey6 text-white rounded pad2"></my-footer>
+	</div>
+</body>
+
+</html>

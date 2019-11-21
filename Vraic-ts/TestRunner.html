@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<!-- puppeteer requires unsafe-eval -->
+	<meta http-equiv="Content-Security-Policy" content="
+				connect-src 'self' http://localhost:* ws://localhost:*;
+				default-src 'self' http://localhost:* ws://localhost:*;
+				script-src 'self' 'unsafe-eval' 'unsafe-inline'" />
+	<title>Courgette Test Runner</title>
+	<link rel="stylesheet" href="app.css" type="text/css" />
+	<script src='./Courgette/Puppeteer/puppeteer-web.js'></script>
+	<script>
+		//(async () => {
+			globalThis.puppeteer = require('puppeteer');
+			//const browser = await puppeteer.connect({ browserWSEndpoint: 'ws://localhost:9222/devtools/browser/23cac8eb-7a30-4d95-88a0-18b1d88a0c78' });
+			//let page = await browser.newPage();
+			//await page.goto('http:www.bbc.co.uk');
+		//})();
+	</script>
+
+</head>
+
+<body>
+	<h1>Courgette</h1>
+	<p id="outputMsg">Running tests...</p>
+	<script type="module" src="./TestRunner.js"></script>
+</body>
+
+</html>
