@@ -1,6 +1,8 @@
 # Vraic-ts
 This is a Web Components Library written in TypeScript with one dependency (TypeScript). It requires use of TypeScript since it makes use of class/property decorators (in theory it could also be ported to Babel, or vanilla JavaScript when decorators get implemented). For end-to-end testing it uses Courgette style tests (similar to NUnit) and Puppeteer, but this could be replaced with any other testing system.
 
+There are example components in the Components subfolder.
+
 ## Features
 * No npm dependencies, can be used without Webpack
 * Simple and lightweight, core code is approx 5KB (Brotli compressed)
