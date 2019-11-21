@@ -80,7 +80,7 @@
     <Content Include="Components\PersonForm\PersonForm.css" />
     <Content Include="Components\PersonForm\PersonForm.html" />
     <TypeScriptCompile Include="Components\MyAside\MyAsideTests.courgette.ts" />
-    <TypeScriptCompile Include="Components\MyContent\MyContent.courgette.ts" />
+    <TypeScriptCompile Include="Components\MyContent\MyContentTests.courgette.ts" />
     <TypeScriptCompile Include="Components\MyCounter\MyCounterTests.courgette.ts" />
     <TypeScriptCompile Include="Components\MyFooter\MyFooterTests.courgette.ts" />
     <TypeScriptCompile Include="Components\MyHeader\MyHeaderTests.courgette.ts" />
