@@ -61,3 +61,10 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+###############################################################################
+# Get linguist-library to identify TypeScript files correctly
+###############################################################################
+#*.ts linguist-language=TypeScript
+Puppeteer/* linguist-vendored
+puppeteer-web.js linguist-vendored=true
