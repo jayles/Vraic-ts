@@ -4,7 +4,7 @@ This is a Web Components Library written in TypeScript with one dependency (Type
 There are example components in the Components subfolder.
 
 ## Features
-* Only 1 npm dependency (TypeScript), can be used without Webpack
+* Only one npm dependency (TypeScript), can be used without Webpack
 * Simple and lightweight, core code is approx 5KB (Brotli compressed)
 * Uses {{handlerbars}} syntax to denote output fields in HTML templates
 * Uses @\<event name> to attach DOM events to HTML elements, e.g. @click, @change
