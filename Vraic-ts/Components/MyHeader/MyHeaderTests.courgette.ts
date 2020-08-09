@@ -2,6 +2,7 @@
 import { assert } from '../../Courgette/Courgette/CourgetteMatchers.js';
 //import { Puppet } from '../../Courgette/Puppeteer/Puppet.js';
 import { puppet } from '../../Courgette/VsTestRunner/VsTestRunner.js';
+import MyHeader from './MyHeader.js';
 //import { log } from '../../Courgette/Logger.js';
 
 @Suite('MyHeader component tests')
@@ -33,23 +34,23 @@ export default class MyHeaderTests {
 		//const text = await page.evaluate(el => el.textContent, elHandle);
 		//assert.areEqual(text, 'Vraic Web Components App');
 
-		const title = await page.$eval("head > title", el => el.textContent);
+		const title = await page.$eval("head > title", (el: HTMLElement) => el.textContent);
 		assert.areEqual(title, 'Vraic Web Components App');
 
 		//let div1: string = await page.$eval('body > div > my-header', el => el.shadowRoot?.querySelector('#div1')?.innerHTML) ?? '';
-		const div1 = await page.evaluate(el => el.shadowRoot?.querySelector('#div1')?.innerHTML, hShadowHost);
+		const div1 = await page.evaluate((el: MyHeader) => el.shadowRoot?.querySelector('#div1')?.innerHTML, hShadowHost);
 		assert.areEqual(div1, "This is the header (Web Component)");
 
 		//let div2: string = await page.$eval('body > div > my-header', el => el.shadowRoot?.querySelector('#div2') ?.innerHTML) ?? '';
-		const div2 = await page.evaluate(el => el.shadowRoot?.querySelector('#div2')?.innerHTML, hShadowHost);
+		const div2 = await page.evaluate((el: MyHeader) => el.shadowRoot?.querySelector('#div2')?.innerHTML, hShadowHost);
 		assert.areEqual(div2, "Page title 1 is 'My Title'");
 
 		//let div3: string = await page.$eval('body > div > my-header', el => el.shadowRoot?.querySelector('#div3') ?.innerHTML) ?? '';
-		const div3 = await page.evaluate(el => el.shadowRoot?.querySelector('#div3')?.innerHTML, hShadowHost);
+		const div3 = await page.evaluate((el: MyHeader) => el.shadowRoot?.querySelector('#div3')?.innerHTML, hShadowHost);
 		assert.areEqual(div3, "my-cust-attrib is 'Custom Attribute'");
 
 		//let div4: string = await page.$eval('body > div > my-header', el => el.shadowRoot?.querySelector('#div4') ?.innerHTML) ?? '';
-		const div4 = await page.evaluate(el => el.shadowRoot?.querySelector('#div4')?.innerHTML, hShadowHost);
+		const div4 = await page.evaluate((el: MyHeader) => el.shadowRoot?.querySelector('#div4')?.innerHTML, hShadowHost);
 		assert.areEqual(div4, "Page title 2 is 'My Title'");
 
 		//let divContent: string[] = await page.$$eval('body > div > my-header', el => el.shadowRoot?.querySelector('#div1') ?.innerHTML)

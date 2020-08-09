@@ -23,7 +23,7 @@ export default class MyHeaderTests {
 	}
 
 	private async getCurrCount(): Promise<number> {
-		return await this.page.$eval(this.shadHostPath, el => (el as MyCounter).count);
+		return await this.page.$eval(this.shadHostPath, (el: MyCounter) => el.count);
 	}
 
 	@Test('Clicking Increment button increases counter by 1')
@@ -32,7 +32,7 @@ export default class MyHeaderTests {
 		const originalCount = await this.getCurrCount();
 
 		// click increment
-		await this.page.$eval(this.shadHostPath, el => (el.shadowRoot?.querySelector('div > button:nth-child(4)') as HTMLButtonElement).click());
+		await this.page.$eval(this.shadHostPath, (el: MyCounter) => (el.shadowRoot?.querySelector('div > button:nth-child(4)') as HTMLButtonElement).click());
 
 		// check outcome
 		const expectedCount: number = originalCount + 1;
@@ -46,7 +46,7 @@ export default class MyHeaderTests {
 		const originalCount: number = await this.getCurrCount();
 
 		// click decrement
-		await this.page.$eval(this.shadHostPath, el => (el.shadowRoot?.querySelector('div > button:nth-child(5)') as HTMLButtonElement).click());
+		await this.page.$eval(this.shadHostPath, (el: MyCounter) => (el.shadowRoot?.querySelector('div > button:nth-child(5)') as HTMLButtonElement).click());
 
 		// check outcome
 		const actualCount: number = await this.getCurrCount();

@@ -1,4 +1,5 @@
 ﻿import HtmlPage from '../HtmlPage/HtmlPage.js';
+import MyAside from '../MyAside/MyAside.js';
 import { Suite, Test, BeforeAll, AfterAll, BeforeEach, AfterEach } from '../../Courgette/Courgette/CourgetteDecorators.js';
 import { assert } from '../../Courgette/Courgette/CourgetteMatchers.js';
 import { Page } from '../../Courgette/Puppeteer/Puppet.js';
@@ -22,7 +23,7 @@ export default class MyAsideTests {
 	}
 
 	private async getCurrPageName(): Promise<string> {
-		const pageName: string = await this.page.$eval('body > div > main > html-page', el => (el as HtmlPage).PageName);
+		const pageName: string = await this.page.$eval('body > div > main > html-page', (el: HtmlPage) => el.PageName);
 		return pageName;
 	}
 
@@ -30,7 +31,7 @@ export default class MyAsideTests {
 	public async checkNewsPageLoads() {
 
 		// click on News page link
-		await this.page.$eval('body > div > my-aside', el => (el.shadowRoot?.querySelector('aside > ul > li:nth-child(2)') as HTMLElement).click());
+		await this.page.$eval('body > div > my-aside', (el: MyAside) => (el.shadowRoot?.querySelector('aside > ul > li:nth-child(2)') as HTMLElement).click());
 		//await this.page.waitForNavigation({ waitUntil: 'networkidle0' });
 		await this.page.waitFor(100);	// we're getting data from local disk, not from network
 
@@ -44,7 +45,7 @@ export default class MyAsideTests {
 	public async checkContacPageLoads() {
 
 		// click on Contact page link
-		await this.page.$eval('body > div > my-aside', el => (el.shadowRoot?.querySelector('aside > ul > li:nth-child(3)') as HTMLElement).click());
+		await this.page.$eval('body > div > my-aside', (el: MyAside) => (el.shadowRoot?.querySelector('aside > ul > li:nth-child(3)') as HTMLElement).click());
 		//await this.page.waitForNavigation({ waitUntil: 'networkidle0' });
 		await this.page.waitFor(100);	// we're getting data from local disk, not from network
 
@@ -58,7 +59,7 @@ export default class MyAsideTests {
 	public async checkAboutPageLoads() {
 
 		// click on About page link
-		await this.page.$eval('body > div > my-aside', el => (el.shadowRoot?.querySelector('aside > ul > li:nth-child(4)') as HTMLElement).click());
+		await this.page.$eval('body > div > my-aside', (el: MyAside) => (el.shadowRoot?.querySelector('aside > ul > li:nth-child(4)') as HTMLElement).click());
 		//await this.page.waitForNavigation({ waitUntil: 'networkidle0' });
 		await this.page.waitFor(100);	// we're getting data from local disk, not from network
 

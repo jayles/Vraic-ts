@@ -23,7 +23,7 @@ export default class PersonFormTests {
 	}
 
 	private async getActualPersonDto(): Promise<Person> {
-		let person = await this.page.$eval('body > div > main > person-form', el => (el as PersonForm).dto);
+		let person = await this.page.$eval('body > div > main > person-form', (el: PersonForm) => el.dto);
 		return person;
 	}
 
@@ -33,10 +33,10 @@ export default class PersonFormTests {
 		const shadHostPath = 'body > div > main > person-form';
 
 		// reset any existing form values
-		await page.$eval(shadHostPath, el => (el.shadowRoot?.querySelector('[data-wci-forename]') as HTMLInputElement).value = '');
-		await page.$eval(shadHostPath, el => (el.shadowRoot?.querySelector('[data-wci-surname]') as HTMLInputElement).value = '');
-		await page.$eval(shadHostPath, el => (el.shadowRoot?.querySelector('[data-wci-age]') as HTMLInputElement).value = '');
-		await page.$eval(shadHostPath, el => (el.shadowRoot?.querySelector('[data-wci-dob]') as HTMLInputElement).value = '');
+		await page.$eval(shadHostPath, (el: PersonForm) => (el.shadowRoot?.querySelector('[data-wci-forename]') as HTMLInputElement).value = '');
+		await page.$eval(shadHostPath, (el: PersonForm) => (el.shadowRoot?.querySelector('[data-wci-surname]') as HTMLInputElement).value = '');
+		await page.$eval(shadHostPath, (el: PersonForm) => (el.shadowRoot?.querySelector('[data-wci-age]') as HTMLInputElement).value = '');
+		await page.$eval(shadHostPath, (el: PersonForm) => (el.shadowRoot?.querySelector('[data-wci-dob]') as HTMLInputElement).value = '');
 
 		// create test person data entry data
 		let expectedPerson: Person = new Person();
@@ -47,24 +47,24 @@ export default class PersonFormTests {
 		expectedPerson.age = 123;
 
 		// enter data & submit form
-		await page.$eval(shadHostPath, el => (el.shadowRoot?.querySelector('[data-wci-forename]') as HTMLInputElement).focus());
+		await page.$eval(shadHostPath, (el: PersonForm) => (el.shadowRoot?.querySelector('[data-wci-forename]') as HTMLInputElement).focus());
 		await page.keyboard.type(expectedPerson.forename)
 
-		await page.$eval(shadHostPath, el => (el.shadowRoot?.querySelector('[data-wci-surname]') as HTMLInputElement).focus());
+		await page.$eval(shadHostPath, (el: PersonForm) => (el.shadowRoot?.querySelector('[data-wci-surname]') as HTMLInputElement).focus());
 		await page.keyboard.type(expectedPerson.surname)
 
-		await page.$eval(shadHostPath, el => (el.shadowRoot?.querySelector('[data-wci-dob]') as HTMLInputElement).focus());
+		await page.$eval(shadHostPath, (el: PersonForm) => (el.shadowRoot?.querySelector('[data-wci-dob]') as HTMLInputElement).focus());
 		const dob = expectedPerson.dob;
 		const dobString = `${dob.getDate()}${dob.getMonth() + 1}${dob.getFullYear()}`;
 		await page.keyboard.type(dobString);
 
-		await page.$eval(shadHostPath, el => (el.shadowRoot?.querySelector('[data-wci-age]') as HTMLInputElement).focus());
+		await page.$eval(shadHostPath, (el: PersonForm) => (el.shadowRoot?.querySelector('[data-wci-age]') as HTMLInputElement).focus());
 		await page.keyboard.type(expectedPerson.age.toString());
 
-		await page.$eval(shadHostPath, el => (el.shadowRoot?.querySelector('[data-wci-alive]') as HTMLInputElement).click());
+		await page.$eval(shadHostPath, (el: PersonForm) => (el.shadowRoot?.querySelector('[data-wci-alive]') as HTMLInputElement).click());
 
 		// click Submit button
-		await this.page.$eval(shadHostPath, el => (el.shadowRoot?.querySelector('form > button') as HTMLButtonElement).click());
+		await this.page.$eval(shadHostPath, (el: PersonForm) => (el.shadowRoot?.querySelector('form > button') as HTMLButtonElement).click());
 
 		// check outcome
 		const actualPerson: Person = await this.getActualPersonDto();

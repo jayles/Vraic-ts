@@ -2,6 +2,7 @@
 import { assert } from '../../Courgette/Courgette/CourgetteMatchers.js';
 import { puppet } from '../../Courgette/VsTestRunner/VsTestRunner.js';
 import { Page } from '../../Courgette/Puppeteer/Puppet.js';
+import MyFooter from './MyFooter.js';
 
 @Suite('MyFooter component tests')
 export default class MyFooterTests {
@@ -20,7 +21,7 @@ export default class MyFooterTests {
 	@Test('Test footer component loads ok')
 	public async checkLoaded() {
 		// document.querySelector("body > div > my-footer").shadowRoot.querySelector("footer > div")
-		const actualFooter: string = await this.page.$eval('body > div > my-footer', el => (el.shadowRoot?.querySelector('footer > div') as HTMLElement).innerText);
+		const actualFooter: string = await this.page.$eval('body > div > my-footer', (el: MyFooter) => (el.shadowRoot?.querySelector('footer > div') as HTMLElement).innerText);
 		const expectedFooter = "This is the footer (Web Component), (c) Widget Ltd 2019";
 		assert.areEqual(expectedFooter, actualFooter);
 	}
