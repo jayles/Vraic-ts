@@ -1,0 +1,9 @@
+﻿/* cursor for links */
+li {
+	cursor: pointer;
+	color: white;
+}
+
+li:hover {
+	color: orange;
+}

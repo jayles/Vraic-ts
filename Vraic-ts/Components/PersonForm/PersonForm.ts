@@ -1,7 +1,13 @@
-﻿import BaseInputForm from '../../Vraic/BaseInputForm.js';
-import Person from './Person.js';
-import { Component, Output } from '../../Vraic/Decorators.js';
-import { log } from '../../Vraic/Logger.js';
+﻿//import BaseComponent from '../../../VraicLib/lib/BaseComponent';
+import { Component, Attrib, Output } from '../../../VraicLib/lib/Decorators';
+import { log } from '../../../VraicLib/lib/Logger';
+import BaseInputForm from '../../../VraicLib/lib/BaseInputForm';
+import Person from './Person';
+
+//import BaseInputForm from '../../Vraic/BaseInputForm.js';
+//import Person from './Person.js';
+//import { Component, Output } from '../../Vraic/Decorators.js';
+//import { log } from '../../Vraic/Logger.js';
 
 @Component('person-form')
 export default class PersonForm extends BaseInputForm<Person> {

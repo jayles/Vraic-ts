@@ -1,0 +1,36 @@
+{
+	"compileOnSave": true, // required for unit testing
+	"compilerOptions": {
+		"experimentalDecorators": true, // required for Courgette & Gherkin tests
+		"strict": true,
+		// strict enables the following:
+		//	noImplicitAny
+		//	noImplicitThis
+		//	alwaysStrict
+		//	strictBindCallApply
+		//	strictNullChecks
+		//	strictFunctionTypes
+		//	strictPropertyInitialization
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"noEmitOnError": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"removeComments": true,
+		"sourceMap": true, // required for unit testing
+		"target": "es2017", // puppeteer seems ok with es6, but do need 'unsafe-eval' specified on Testrunner.html CSP
+		"module": "esnext", // required for dynamic module loading
+		"outDir": "lib",
+		"declaration": true,
+		"moduleResolution": "node"
+		//"typeRoots": [
+		//	"./Courgette/Puppeteer/node_modules/@types"
+		//]
+	},
+	"include": ["src/*.ts", "globals.d.ts"],
+	"exclude": [
+		"wwwroot",
+		"node_modules",
+		"lib"
+	]
+}

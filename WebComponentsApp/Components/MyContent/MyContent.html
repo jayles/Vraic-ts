@@ -1,0 +1,17 @@
+﻿<template>
+	<div>
+		<h1>Main content (Web Component)</h1>
+
+		<input type="number" value="[[a]]" name="a" @change="increaseA">		<!-- change="this.a = ev.target.value" -->
+		<input type="number" value="[[b]]" name="b" @change="increaseB">		<!-- change="this.b = ev.target.value" -->
+		<input type="text" name="c" @input="this.c = event.target.value">
+		<p>Property c has value {{c}}</p>
+		<p>Property d has value {{d}}</p>
+
+		<p>{{a}} + {{b}} = {{total}}</p>
+		<p>{{a}} * {{b}} = {{mult}}</p>
+		<br>
+		<p>x is {{x}} and y is {{y}}</p>
+		<p>π is {{pi}}</p>
+	</div>
+</template>

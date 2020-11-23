@@ -1,6 +1,6 @@
-﻿import BaseComponent from '../../Vraic/BaseComponent.js';
-import { Component, Attrib, Output } from '../../Vraic/Decorators.js';
-//import { log } from '../BaseComponent/Logger.js';
+﻿import BaseComponent from '../../../VraicLib/lib/BaseComponent';
+import { Component, Attrib, Output } from '../../../VraicLib/lib/Decorators';
+//import { log } from '../../../VraicLib/lib/Logger';
 
 // Example usage: <my-time format="utc"></my-time>
 // Note that self-closing tags are not supported for web components: <my-time /> will **NOT** work

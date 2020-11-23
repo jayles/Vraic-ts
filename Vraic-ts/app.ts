@@ -1,5 +1,8 @@
-﻿import BaseComponent from './Vraic/BaseComponent.js';
-import { log } from './Vraic/Logger.js';
+﻿import BaseComponent from '../VraicLib/lib/BaseComponent';
+import { log } from '../VraicLib/lib/Logger';
+
+//import BaseComponent from './Vraic/BaseComponent.js';
+//import { log } from './Vraic/Logger.js';
 
 //async function checkComponentRegistered_OLD(tag: string) {
 //	let ctor = await customElements.get(tag);

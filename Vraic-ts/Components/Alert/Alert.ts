@@ -1,6 +1,10 @@
-﻿import BaseComponent from '../../Vraic/BaseComponent.js';
-import { Component } from '../../Vraic/Decorators.js';
-import { log } from '../../Vraic/Logger.js';
+﻿import BaseComponent from '../../../VraicLib/lib/BaseComponent';
+import { Component, Attrib } from '../../../VraicLib/lib/Decorators';
+import { log } from '../../../VraicLib/lib/Logger';
+
+//import BaseComponent from '../../Vraic/BaseComponent.js';
+//import { Component } from '../../Vraic/Decorators.js';
+//import { log } from '../../Vraic/Logger.js';
 
 @Component('my-alert')
 export default class Alert extends BaseComponent {

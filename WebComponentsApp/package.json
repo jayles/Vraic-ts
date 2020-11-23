@@ -1,0 +1,11 @@
+{
+	"private": true,
+	"version": "1.0.0",
+	"name": "web-components-app",
+	"description": "AWS Serverless Web Components Test App",
+	"devDependencies": {
+		"vraic-lib": "1.0.0"
+	},
+	"dependencies": {
+	}
+}

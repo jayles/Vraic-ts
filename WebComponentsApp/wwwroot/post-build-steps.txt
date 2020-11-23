@@ -1,0 +1,8 @@
+﻿Post-build
+==========
+copy /Y "$(ProjectDir)\node_modules\vraic-lib\*.js" "$(ProjectDir)\wwwroot\node_modules\vraic-lib\*.js"
+copy /Y "$(ProjectDir)\node_modules\vraic-lib\*.map" "$(ProjectDir)\wwwroot\node_modules\vraic-lib\*.map"
+copy /Y "$(ProjectDir)\Components\*\*.css" "$(ProjectDir)\wwwroot\Components\*\*.css"
+copy /Y "$(ProjectDir)\Components\*\*.html" "$(ProjectDir)\wwwroot\Components\*\*.html"
+
+Replace " with &quot;

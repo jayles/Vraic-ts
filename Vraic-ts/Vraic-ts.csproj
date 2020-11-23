@@ -57,7 +57,17 @@
     <TypeScriptSourceRoot />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Courgette\Courgette\CourgetteTestExecutor.js" />
+    <Content Include="Courgette\Courgette\CourgetteTestExecutor.js.map" />
+    <Content Include="Courgette\Gherkin\GherkinTestExecutor.js" />
+    <Content Include="Courgette\Gherkin\GherkinTestExecutor.js.map" />
+    <Content Include="Courgette\Puppeteer\package-lock.json" />
+    <Content Include="Courgette\Puppeteer\Puppet.ts" />
     <Content Include="Courgette\Puppeteer\puppeteer-web.js" />
+    <Content Include="Courgette\Spec\SpecTestExecutor.js" />
+    <Content Include="Courgette\Spec\SpecTestExecutor.js.map" />
+    <Content Include="Courgette\VsTestRunner\VsTestRunner.js" />
+    <Content Include="Courgette\VsTestRunner\VsTestRunner.js.map" />
     <Content Include="TestRunner.html" />
     <Content Include="tsconfig.json" />
     <Content Include="UnsupportedBrowser.html" />
@@ -85,25 +95,6 @@
     <TypeScriptCompile Include="Components\MyFooter\MyFooterTests.courgette.ts" />
     <TypeScriptCompile Include="Components\MyHeader\MyHeaderTests.courgette.ts" />
     <TypeScriptCompile Include="Components\PersonForm\PersonFormTests.courgette.ts" />
-    <TypeScriptCompile Include="Courgette\Courgette\CourgetteDecorators.ts" />
-    <TypeScriptCompile Include="Courgette\Courgette\CourgetteMatchers.ts" />
-    <TypeScriptCompile Include="Courgette\Courgette\CourgetteTestExecutor.ts" />
-    <TypeScriptCompile Include="Courgette\Courgette\TestItem.ts" />
-    <TypeScriptCompile Include="Courgette\Courgette\TestSuite.ts" />
-    <TypeScriptCompile Include="Courgette\Gherkin\GherkinDecorators.ts" />
-    <TypeScriptCompile Include="Courgette\Gherkin\GherkinMatchers.ts" />
-    <TypeScriptCompile Include="Courgette\Gherkin\GherkinTestExecutor.ts" />
-    <TypeScriptCompile Include="Courgette\Logger.ts" />
-    <TypeScriptCompile Include="Courgette\Puppeteer\Puppet.ts" />
-    <TypeScriptCompile Include="Courgette\Spec\SpecMatcher.ts" />
-    <TypeScriptCompile Include="Courgette\Spec\SpecTestDiscoverer.ts" />
-    <TypeScriptCompile Include="Courgette\Spec\SpecTestExecutor.ts" />
-    <TypeScriptCompile Include="Courgette\Spec\TestMethod.ts" />
-    <TypeScriptCompile Include="Courgette\Spec\TestSuite.ts" />
-    <TypeScriptCompile Include="Courgette\UnitTestsReal\MatcherTests.courgette.ts" />
-    <TypeScriptCompile Include="Courgette\UnitTestsReal\MatcherTests.spec.ts" />
-    <TypeScriptCompile Include="Courgette\VsTestRunner\VsTestResult.ts" />
-    <TypeScriptCompile Include="Courgette\VsTestRunner\VsTestRunner.ts" />
     <Content Include="UnitTest.runsettings" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -119,26 +110,44 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="Courgette\Courgette\CourgetteDecorators.ts" />
+    <TypeScriptCompile Include="Courgette\Courgette\CourgetteMatchers.ts" />
+    <TypeScriptCompile Include="Courgette\Courgette\CourgetteTestExecutor.ts" />
+    <TypeScriptCompile Include="Courgette\Courgette\TestItem.ts" />
+    <TypeScriptCompile Include="Courgette\Courgette\TestSuite.ts" />
+    <TypeScriptCompile Include="Courgette\Gherkin\GherkinDecorators.ts" />
+    <TypeScriptCompile Include="Courgette\Gherkin\GherkinMatchers.ts" />
+    <TypeScriptCompile Include="Courgette\Gherkin\GherkinTestExecutor.ts" />
+    <TypeScriptCompile Include="Courgette\Logger.ts" />
+    <TypeScriptCompile Include="Courgette\Spec\SpecMatcher.ts" />
+    <TypeScriptCompile Include="Courgette\Spec\SpecTestDiscoverer.ts" />
+    <TypeScriptCompile Include="Courgette\Spec\SpecTestExecutor.ts" />
+    <TypeScriptCompile Include="Courgette\Spec\TestMethod.ts" />
+    <TypeScriptCompile Include="Courgette\Spec\TestSuite.ts" />
+    <TypeScriptCompile Include="Courgette\UnitTestsReal\MatcherTests.courgette.ts" />
+    <TypeScriptCompile Include="Courgette\UnitTestsReal\MatcherTests.spec.ts" />
+    <TypeScriptCompile Include="Courgette\VsTestRunner\VsTestResult.ts" />
+    <TypeScriptCompile Include="Courgette\VsTestRunner\VsTestRunner.ts" />
     <TypeScriptCompile Include="globals.d.ts" />
     <TypeScriptCompile Include="Components\Alert\Alert.ts" />
     <TypeScriptCompile Include="TestRunner.ts" />
-    <TypeScriptCompile Include="Vraic\ObjectProxy.ts" />
-    <TypeScriptCompile Include="Vraic\ArrayProxy.ts" />
-    <TypeScriptCompile Include="Vraic\BaseInputForm.ts" />
-    <TypeScriptCompile Include="Vraic\Logger.ts" />
+    <TypeScriptCompile Include="NOTUSED_Vraic\ObjectProxy.ts" />
+    <TypeScriptCompile Include="NOTUSED_Vraic\ArrayProxy.ts" />
+    <TypeScriptCompile Include="NOTUSED_Vraic\BaseInputForm.ts" />
+    <TypeScriptCompile Include="NOTUSED_Vraic\Logger.ts" />
     <TypeScriptCompile Include="Components\MyCounter\MyCounter.ts" />
     <TypeScriptCompile Include="Components\MyTime\MyTime.ts" />
     <TypeScriptCompile Include="Components\PersonForm\PersonForm.ts" />
     <TypeScriptCompile Include="Components\PersonForm\Person.ts" />
-    <TypeScriptCompile Include="Vraic\Decorators.ts" />
-    <TypeScriptCompile Include="Vraic\Router.ts" />
-    <TypeScriptCompile Include="Vraic\BaseComponent.ts" />
+    <TypeScriptCompile Include="NOTUSED_Vraic\Decorators.ts" />
+    <TypeScriptCompile Include="NOTUSED_Vraic\Router.ts" />
+    <TypeScriptCompile Include="NOTUSED_Vraic\BaseComponent.ts" />
     <TypeScriptCompile Include="Components\HtmlPage\HtmlPage.ts" />
     <TypeScriptCompile Include="Components\MyAside\MyAside.ts" />
     <TypeScriptCompile Include="Components\MyContent\MyContent.ts" />
     <TypeScriptCompile Include="Components\MyFooter\MyFooter.ts" />
     <TypeScriptCompile Include="Components\MyHeader\MyHeader.ts" />
-    <TypeScriptCompile Include="Vraic\TemplateParser.ts" />
+    <TypeScriptCompile Include="NOTUSED_Vraic\TemplateParser.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

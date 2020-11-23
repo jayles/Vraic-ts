@@ -1,8 +1,14 @@
-﻿import BaseComponent from '../../Vraic/BaseComponent.js';
-import ObjectProxy from '../../Vraic/ObjectProxy.js';
-import ArrayProxy from '../../Vraic/ArrayProxy.js';
-import { Component, Output } from '../../Vraic/Decorators.js';
-import { log } from '../../Vraic/Logger.js';
+﻿import BaseComponent from '../../../VraicLib/lib/BaseComponent';
+import { Component, Attrib, Output } from '../../../VraicLib/lib/Decorators';
+import { log } from '../../../VraicLib/lib/Logger';
+import ArrayProxy from '../../../VraicLib/lib/ArrayProxy';
+import ObjectProxy from '../../../VraicLib/lib/ObjectProxy';
+
+//import BaseComponent from '../../Vraic/BaseComponent.js';
+//import ObjectProxy from '../../Vraic/ObjectProxy.js';
+//import ArrayProxy from '../../Vraic/ArrayProxy.js';
+//import { Component, Output } from '../../Vraic/Decorators.js';
+//import { log } from '../../Vraic/Logger.js';
 
 class Person {
 	public constructor() { };

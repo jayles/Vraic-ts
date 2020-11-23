@@ -1,4 +1,5 @@
-﻿import { Browser, Page, CoverageEntry } from 'puppeteer';
+﻿// @ts-ignore
+import { Browser, Page, CoverageEntry } from 'puppeteer';
 export { Browser, Page, CoverageEntry };
 import { log } from '../Logger.js';
 
@@ -11,6 +12,7 @@ import { log } from '../Logger.js';
 // see https://github.com/GoogleChrome/puppeteer
 
 // global var created within index.html when it loads puppeteer using require()
+// @ts-ignore
 declare var puppeteer: typeof import('puppeteer');
 
 export class Puppet {

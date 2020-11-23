@@ -1,0 +1,35 @@
+import { Router } from './Router.js';
+export default class BaseComponent extends HTMLElement {
+    static Router: Router;
+    static tag: string;
+    get TagName(): string;
+    get ClassName(): string;
+    static getClassName(tagIn: string): string;
+    private _knownOutputFields;
+    static _observedAttributes: string[];
+    static get observedAttributes(): string[];
+    protected static _templateHtml: string;
+    get TemplateHtml(): string;
+    set TemplateHtml(value: string);
+    protected _shadRoot: ShadowRoot;
+    get ShadRoot(): ShadowRoot;
+    set ShadRoot(value: ShadowRoot);
+    constructor();
+    getFunctionByName(funcName: string): EventListener;
+    private getNestedValue;
+    GetPropValue(propName: string): string;
+    getDataAttribWco(propName: keyof this): string;
+    getDataAttribWci(propName: keyof this): string;
+    getDataAttribWce(propName: string): string;
+    getDataAttribWct(): string;
+    getShadowElementsByAttribName<T extends HTMLElement>(attribName: string): NodeListOf<T>;
+    addNestedOutputField(fullPathFieldName: string): void;
+    private getKnownOutputField;
+    UpdateChildElementsContent(propName: keyof this): void;
+    SetElementContent(propName: keyof this): void;
+    protected connectedCallback(): Promise<void>;
+    protected disconnectedCallback(): Promise<void>;
+    protected attributeChangedCallback(custAttrName: keyof this, oldVal: this[keyof this], newVal: this[keyof this]): Promise<void>;
+    protected adoptedCallback(): Promise<void>;
+    loadComponent(tag: string, parent: string, slug: string, setState?: boolean): void;
+}

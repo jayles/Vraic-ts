@@ -1,0 +1,17 @@
+{
+	"private": true,
+	"name": "vraic-lib",
+	"version": "1.0.0",
+	"description": "Vraic Web Components Library",
+	"author": "jayles",
+	"main": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"scripts": {
+		"build": "tsc --build",
+		"clean": "tsc --build --clean"
+	},
+	"devDependencies": {
+		"typescript": "^4.0.2"
+	},
+	"dependencies": {}
+}

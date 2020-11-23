@@ -1,0 +1,13 @@
+﻿<template>
+	<aside>
+		<ul>
+			<li @click="this.loadComponent('my-content', 'main', '/')">Home</li>
+			<li @click="this.loadComponent('html-page', 'main', 'news')">News</li>
+			<li @click="this.loadComponent('html-page', 'main', 'contact')">Contact</li>
+			<li @click="this.loadComponent('html-page', 'main', 'about')">About</li>
+			<li @click="this.loadComponent('my-counter', 'main', 'counter')">Counter</li>
+			<li @click="this.loadComponent('person-form', 'main', 'input')">Person Form</li>
+			<li @click="this.loadComponent('data-grid', 'main', 'data')">Data Grid</li>
+		</ul>
+	</aside>
+</template>

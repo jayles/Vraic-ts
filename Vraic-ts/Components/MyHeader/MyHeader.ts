@@ -1,6 +1,9 @@
-﻿import BaseComponent from '../../Vraic/BaseComponent.js';
-import { Component, Attrib } from '../../Vraic/Decorators.js';
-//import { log } from '../BaseComponent/Logger.js';
+﻿import BaseComponent from '../../../VraicLib/lib/BaseComponent';
+import { Component, Attrib } from '../../../VraicLib/lib/Decorators';
+//import { log } from '../../../VraicLib/lib/Logger';
+
+//import BaseComponent from '../../Vraic/BaseComponent.js';
+//import { Component, Attrib } from '../../Vraic/Decorators.js';
 
 @Component('my-header')
 export default class MyHeader extends BaseComponent {

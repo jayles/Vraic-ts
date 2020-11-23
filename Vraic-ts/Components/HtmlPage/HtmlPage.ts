@@ -1,7 +1,11 @@
-﻿import BaseComponent from '../../Vraic/BaseComponent.js';
-import { Component } from '../../Vraic/Decorators.js';
-import { log } from '../../Vraic/Logger.js';
-import '../MyTime/MyTime.js';	// use unnamed import to ensure MyTime loaded
+﻿import BaseComponent from '../../../VraicLib/lib/BaseComponent';
+import { Component, Attrib } from '../../../VraicLib/lib/Decorators';
+import { log } from '../../../VraicLib/lib/Logger';
+
+//import BaseComponent from '../../Vraic/BaseComponent.js';
+//import { Component } from '../../Vraic/Decorators.js';
+//import { log } from '../../Vraic/Logger.js';
+//import '../MyTime/MyTime.js';	// use unnamed import to ensure MyTime loaded
 
 @Component('html-page')
 export default class HtmlPage extends BaseComponent {

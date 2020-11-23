@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <AWSProjectType>Lambda</AWSProjectType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="wwwroot\images\**" />
+    <Compile Remove="wwwroot\node_modules\**" />
+    <Content Remove="wwwroot\images\**" />
+    <Content Remove="wwwroot\node_modules\**" />
+    <EmbeddedResource Remove="wwwroot\images\**" />
+    <EmbeddedResource Remove="wwwroot\node_modules\**" />
+    <None Remove="wwwroot\images\**" />
+    <None Remove="wwwroot\node_modules\**" />
+    <TypeScriptCompile Remove="wwwroot\images\**" />
+    <TypeScriptCompile Remove="wwwroot\node_modules\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\app.ts" />
+    <Content Remove="wwwroot\Components\TestData\about.html" />
+    <Content Remove="wwwroot\Components\TestData\contact.html" />
+    <Content Remove="wwwroot\Components\TestData\news.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Components\Alert\Alert.css" />
+    <None Remove="Components\Alert\Alert.html" />
+    <None Remove="Components\DataGrid\DataGrid.css" />
+    <None Remove="Components\DataGrid\DataGrid.html" />
+    <None Remove="Components\HtmlPage\HtmlPage.css" />
+    <None Remove="Components\HtmlPage\HtmlPage.html" />
+    <None Remove="Components\MyAside\MyAside.css" />
+    <None Remove="Components\MyAside\MyAside.html" />
+    <None Remove="Components\MyContent\MyContent.css" />
+    <None Remove="Components\MyContent\MyContent.html" />
+    <None Remove="Components\MyCounter\MyCounter.css" />
+    <None Remove="Components\MyCounter\MyCounter.html" />
+    <None Remove="Components\MyFooter\MyFooter.css" />
+    <None Remove="Components\MyFooter\MyFooter.html" />
+    <None Remove="Components\MyHeader\MyHeader.css" />
+    <None Remove="Components\MyHeader\MyHeader.html" />
+    <None Remove="Components\MyTime\MyTime.css" />
+    <None Remove="Components\MyTime\MyTime.html" />
+    <None Remove="Components\PersonForm\PersonForm.css" />
+    <None Remove="Components\PersonForm\PersonForm.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Components\Alert\Alert.css" />
+    <Content Include="Components\Alert\Alert.html" />
+    <Content Include="Components\DataGrid\DataGrid.css" />
+    <Content Include="Components\DataGrid\DataGrid.html" />
+    <Content Include="Components\HtmlPage\HtmlPage.css" />
+    <Content Include="Components\HtmlPage\HtmlPage.html" />
+    <Content Include="Components\MyAside\MyAside.css" />
+    <Content Include="Components\MyAside\MyAside.html" />
+    <Content Include="Components\MyContent\MyContent.css" />
+    <Content Include="Components\MyContent\MyContent.html" />
+    <Content Include="Components\MyCounter\MyCounter.css" />
+    <Content Include="Components\MyCounter\MyCounter.html" />
+    <Content Include="Components\MyFooter\MyFooter.css" />
+    <Content Include="Components\MyFooter\MyFooter.html" />
+    <Content Include="Components\MyHeader\MyHeader.css" />
+    <Content Include="Components\MyHeader\MyHeader.html" />
+    <Content Include="Components\MyTime\MyTime.css" />
+    <Content Include="Components\MyTime\MyTime.html" />
+    <Content Include="Components\PersonForm\PersonForm.css" />
+    <Content Include="Components\PersonForm\PersonForm.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="5.1.0" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Components\TestData\about.html" />
+    <None Include="wwwroot\Components\TestData\contact.html" />
+    <None Include="wwwroot\Components\TestData\news.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\Components\TestData\Transactions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+	<!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(ProjectDir)node_modules\vraic-lib\*.js&quot; &quot;$(ProjectDir)wwwroot\node_modules\vraic-lib\*.js&quot;" />
+		<Exec Command="copy /Y &quot;$(ProjectDir)node_modules\vraic-lib\*.js.map&quot; &quot;$(ProjectDir)wwwroot\node_modules\vraic-lib\*.js.map&quot;" />
+  </Target>-->
+</Project>

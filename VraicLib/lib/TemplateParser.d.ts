@@ -1,0 +1,37 @@
+import BaseComponent from './BaseComponent.js';
+export declare class TemplateParser {
+    private component;
+    private eventCount;
+    private inputCountMap;
+    constructor(component: BaseComponent);
+    private isFunctionName;
+    private AddEventHandler;
+    private getDataAttrib;
+    private parseEventsInElement;
+    private ParseAndAttachEvents;
+    private getAttribValue;
+    private getAttribName;
+    private ParseInput;
+    private parseInputElements;
+    private fileExists;
+    private fileExists1;
+    private CreateTemplateElement;
+    private parseTemplateElement;
+    private getEventsInElement;
+    private ParseOther;
+    private parseOtherElements;
+    private deKebab;
+    private removeHandlebars;
+    private parseEs6Template;
+    private formatEs6Template;
+    private parseHandlerbar;
+    private stripComments;
+    private replaceOneWayHandlerbars;
+    private replaceOneTimeHandlerbars;
+    private parseHtmlTemplate;
+    private loadHtmlTemplate;
+    private insertTemplateIntoDocument;
+    loadAndParseTemplate(): Promise<void>;
+    cloneAndAttachTemplate(showErrors: boolean): void;
+    private getNameAttribs;
+}
