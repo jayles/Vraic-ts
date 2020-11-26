@@ -51,6 +51,9 @@ checkComponentRegistered(MyContent);
 
 // the following components are loaded dynamically
 
+import DropDownCheckList from './Components/DropDownCheckList/DropDownCheckList.js';
+checkComponentRegistered(DropDownCheckList);
+
 //import HtmlPage from './Components/HtmlPage/HtmlPage.js';
 //checkComponentRegistered(HtmlPage);
 

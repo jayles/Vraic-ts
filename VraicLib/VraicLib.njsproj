@@ -58,6 +58,9 @@
     <TypeScriptCompile Include="src\ObjectProxy.ts" />
     <TypeScriptCompile Include="src\Router.ts" />
     <TypeScriptCompile Include="src\TemplateParser.ts" />
+    <TypeScriptCompile Include="src\BaseDataGrid.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

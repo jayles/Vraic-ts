@@ -25,8 +25,8 @@
   <ItemGroup>
     <None Remove="Components\Alert\Alert.css" />
     <None Remove="Components\Alert\Alert.html" />
-    <None Remove="Components\DataGrid\DataGrid.css" />
-    <None Remove="Components\DataGrid\DataGrid.html" />
+    <None Remove="Components\DropDownCheckList\DropDownCheckList.css" />
+    <None Remove="Components\DropDownCheckList\DropDownCheckList.html" />
     <None Remove="Components\HtmlPage\HtmlPage.css" />
     <None Remove="Components\HtmlPage\HtmlPage.html" />
     <None Remove="Components\MyAside\MyAside.css" />
@@ -43,12 +43,16 @@
     <None Remove="Components\MyTime\MyTime.html" />
     <None Remove="Components\PersonForm\PersonForm.css" />
     <None Remove="Components\PersonForm\PersonForm.html" />
+    <None Remove="Components\TransactionDataGrid\TransactionDataGrid.css" />
+    <None Remove="Components\TransactionDataGrid\TransactionDataGrid.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Components\Alert\Alert.css" />
     <Content Include="Components\Alert\Alert.html" />
-    <Content Include="Components\DataGrid\DataGrid.css" />
-    <Content Include="Components\DataGrid\DataGrid.html" />
+    <Content Include="Components\DropDownCheckList\DropDownCheckList.css" />
+    <Content Include="Components\DropDownCheckList\DropDownCheckList.html" />
+    <Content Include="Components\TransactionDataGrid\TransactionDataGrid.css" />
+    <Content Include="Components\TransactionDataGrid\TransactionDataGrid.html" />
     <Content Include="Components\HtmlPage\HtmlPage.css" />
     <Content Include="Components\HtmlPage\HtmlPage.html" />
     <Content Include="Components\MyAside\MyAside.css" />
@@ -84,6 +88,9 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\DropDownList\" />
   </ItemGroup>
 	<!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="copy /Y &quot;$(ProjectDir)node_modules\vraic-lib\*.js&quot; &quot;$(ProjectDir)wwwroot\node_modules\vraic-lib\*.js&quot;" />

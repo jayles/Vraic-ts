@@ -1,0 +1,12 @@
+﻿<template>
+	<div class="dropdown-check-list">
+		<span class="anchor" @click="this.ToggleVisibility('dropItems');">Select Items</span>
+		<ul id="dropItems" class="items" @click="this.ToggleCheckBox(event);">
+			<li><input name="item[0]" type="checkbox">Strawberry</li>
+			<li><input name="item[1]" type="checkbox">Raspberry</li>
+			<li><input name="item[2]" type="checkbox">Peach</li>
+			<li><input name="item[3]" type="checkbox">Vanilla</li>
+			<li><input name="item[4]" type="checkbox">Chocolate</li>
+		</ul>
+	</div>
+</template>
