@@ -66,7 +66,13 @@ class ProxyHandler<T extends object> implements ProxyHandler<T> {
 export default class ArrayProxy<T> extends Array<T> {
 
 	constructor(array: Array<T>) {
+
+		// this be super(array);	// needs testing with initializer
 		super();
+
+		// might need this if targeting es5, but Proxy is an es6 feature
+		//Object.setPrototypeOf(this, ArrayProxy.prototype);
+
 		log.highlight(`ArrayProxy<T> ctor() called, _array is ${JSON.stringify(array)}`);
 		let proxy = new Proxy<Array<T>>(array, new ProxyHandler<Array<T>>());
 		return proxy;

@@ -7,4 +7,7 @@ export default class BaseInputForm<T extends object> extends BaseComponent {
     protected onSubmit(): void;
     protected copyFormToDtoA<T extends object>(idto: T): T;
     protected copyDtoToFormA<T extends object>(dto: T): void;
+    private GetDataType;
+    private GetFormFields;
+    private CreateFormHtml;
 }

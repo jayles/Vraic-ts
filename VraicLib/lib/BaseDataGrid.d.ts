@@ -1,5 +1,6 @@
 import BaseComponent from './BaseComponent.js';
 export default class BaseDataGrid<T extends object> extends BaseComponent {
+    static tag: string;
     DataUri: string;
     DataContent: Nullable<Array<T>>;
     constructor();

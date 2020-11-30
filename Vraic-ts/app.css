@@ -4,7 +4,7 @@
 }
 
 /* default style for custom elements
-	 note :host { display: block} is not supported on Safari
+	 note :host { display: block} is not supported on Safari??
 */
 /*:not(html, head, body, header, footer, aside, main, div, span, p, h1, h2, h3, h4, h5, h6) {
 	display:block;

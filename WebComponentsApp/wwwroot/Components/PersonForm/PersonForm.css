@@ -1,1 +1,18 @@
-﻿
+﻿.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+form {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	grid-gap: 16px;
+}
+
+label {
+	grid-column: 1 / 2;
+}
+
+input, button {
+	grid-column: 2 / 2;
+}

@@ -4,7 +4,7 @@ import { log, assert } from './Logger.js';
 
 @Freeze
 export default class BaseInputForm<T extends object> extends BaseComponent {
-	public static tag: string;// Not used by this class, but derived copy used by sublcasses
+	public static tag: string = "BaseInputForm (not used)";	// Not used by this class, but derived copy used by subclasses
 
 	// derived class must create the concrete object
 	public dto!: T;
@@ -15,11 +15,15 @@ export default class BaseInputForm<T extends object> extends BaseComponent {
 		log.func(`BaseInputForm<T> (${this.constructor.name}) ctor called`);
 	}
 
-	protected async connectedCallback() {
+	protected async connectedCallback()
+	{
 		await super.connectedCallback();
 
 		// set up DTO
 		log.event(`${this.constructor.name}.connectedCallback() called`);
+
+		// create HTML elements for form
+		this.CreateFormHtml();
 
 		// copy DTO to HTML input form
 		this.copyDtoToFormA<T>(this.dto);
@@ -131,6 +135,57 @@ export default class BaseInputForm<T extends object> extends BaseComponent {
 					log.error(`copyDtoToFormA() - hit default in switch, type was '${type}'`);
 			}
 		}
+	}
+
+	private GetDataType(propName: string, propValue: PropValue<T>): string
+	{
+		switch (typeof propValue) {
+			case 'string': return 'text';
+			case 'number': return 'number';
+
+			case 'object':
+				if (propValue instanceof Date)
+					return 'date';
+				else {
+					log.error('copyDtoToFormA() - non-Date object encountered');
+					return 'error';
+				}
+
+			case 'boolean': return 'checkbox';
+
+			default:
+				log.error(`copyDtoToFormA() - hit default in switch, type was '${typeof propValue}'`);
+				return 'error';
+		}
+
+	}
+
+	// <li>
+	//	<label for="first-name">First Name</label>
+	//	<input type="text" id="first-name" placeholder="Enter your first name here">
+	// </li>
+	private GetFormFields(): string {
+		let fieldHtml: string = '';
+
+		let propKey: keyof T;
+		for (propKey in this.dto)
+		{
+			let propName = propKey as string;
+			let propValue = this.dto[propKey];
+			let propType = this.GetDataType(propName, propValue);
+			let propDataAttribute = this.getDataAttribWci(propName as keyof this);
+			fieldHtml += `<label for="${propName}">${propName}</label><input type="${propType}" name="${propName}" placeholder="Enter ${propName} here" ${propDataAttribute}>`;
+		}
+
+		fieldHtml += `<label></label><button type="button" onclick="() => this.onSubmit();">Submit</button>`;
+
+		return fieldHtml;
+	}
+
+	private CreateFormHtml(): void {
+		this.ShadRoot.innerHTML =
+			`<link async rel="stylesheet" href="/Components/BaseInputForm/BaseInputForm.css">
+			<form class="grid-container">${this.GetFormFields()}</form>`;
 	}
 
 }

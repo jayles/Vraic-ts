@@ -4,7 +4,7 @@
 //	step: number
 //}
 
-//enum Colour { Red, Green, Blue };
+enum Colour { Red = "Red", Green = "Green", Blue = "Blue" };
 
 export default class Person {
 	public forename: string = 'John';
@@ -12,6 +12,6 @@ export default class Person {
 	public dob: Date = new Date();
 	public age: number = 55;
 	public alive: boolean = true;
-	//public favColour: Colour = Colour.Red;
+	public favColour: Colour = Colour.Red;
 	//public range: IRange = { 0, 0, 0};
 }

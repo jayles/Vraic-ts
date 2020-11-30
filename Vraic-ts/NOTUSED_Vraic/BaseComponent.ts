@@ -34,7 +34,7 @@ import TemplateParser from './TemplateParser.js';
 import { log, assert } from './Logger.js';
 
 //@Freeze
-export default class BaseComponent extends HTMLElement
+export default abstract class BaseComponent extends HTMLElement
 {
 	// Note that TypeScript is unable to reference derived class static members from the base class without some casting, so
 	// you need to do this:
@@ -52,6 +52,8 @@ export default class BaseComponent extends HTMLElement
 	public static Router: Router = new Router();
 
 	// html tag name
+	// static abstract not supported in TypeSript: see https://github.com/microsoft/TypeScript/issues/34516
+	//public static abstract tag: string = "BaseComponent (not used)";
 	public static tag: string = "BaseComponent (not used)";
 	public get TagName(): string {
 		return (this.constructor as any).tag;

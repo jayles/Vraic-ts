@@ -35,11 +35,11 @@ export default class DropDownCheckList extends BaseComponent
 			return;
 
 		if (dropEl.classList.contains('visible')) {
-			dropEl.classList.remove('visible');
+			dropEl.classList.remove('visible');	// doesn't work
 			dropEl.style.display = 'none';
 		}
 		else {
-			dropEl.classList.add('visible');
+			dropEl.classList.add('visible');	// doesn't work
 			dropEl.style.display = 'block';
 		}
 	}

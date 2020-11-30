@@ -3,6 +3,8 @@ import BaseComponent from './BaseComponent.js';
 import { log, assert } from './Logger.js';
 
 export default class BaseDataGrid<T extends object> extends BaseComponent {
+	public static tag: string = "BaseDataGrid (not used)";	// Not used by this class, but derived copy used by subclasses
+
 	public DataUri: string = '';
 	public DataContent: Nullable<Array<T>> = null;
 
@@ -14,7 +16,9 @@ export default class BaseDataGrid<T extends object> extends BaseComponent {
 	protected dateReviver(key: any, value: any): any
 	{
 		if (typeof value === 'string') {
-			let regex = /\d{4}-\d{2}-\d{2}T[0-2]\d:[0-5]\d:[0-5]\dZ/;
+			//let regex = /\d{4}-\d{2}-\d{2}T[0-2]\d:[0-5]\d:[0-5]\dZ/;
+			//            yyyy-MM-dd      Thh:mm:ss                 [Z | +/- 00:00]
+			let regex = /\d{4}-\d{2}-\d{2}T[0-2]\d:[0-5]\d:[0-5]\d([zZ]|[+\-]\d{2}:\d{2})?/
 			let isMatch: boolean = regex.test(value);
 			if (isMatch)
 				return new Date(value);
@@ -119,7 +123,8 @@ export default class BaseDataGrid<T extends object> extends BaseComponent {
 
 	private CreateTableHtml(): void {
 		this.ShadRoot.innerHTML =
-			`<table>
+			`<link async rel="stylesheet" href="/Components/BaseDataGrid/BaseDataGrid.css">
+			<table>
 				<thead>${this.GetHeaderRow()}</thead>
 				<tbody>${this.GetDataRows()}</tbody>
 			</table>`;
